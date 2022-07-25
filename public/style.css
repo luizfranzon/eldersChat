@@ -8,6 +8,8 @@
     font-family: "Roboto", sans-serif;
 }
 
+
+
 ::selection {
     color: #69c6fc;
     background: #1e709f75;
@@ -40,6 +42,10 @@ body {
     border-radius: 16px;
     padding: 20px;
     background-color: #212121;
+
+    overflow-wrap: break-word;
+    overflow-y:scroll;
+    overflow-x: hidden;
 }
 
 .message {
@@ -49,6 +55,10 @@ body {
 
 .messages strong {
     color: #00b7f8;
+}
+
+.messageText {
+    width: 550px;
 }
 
 input {
@@ -103,4 +113,25 @@ input:focus {
         
     }
     
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #121214 #262626;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 24px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #262626;
+    border-radius: 24px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #121214;
+    border-radius: 16px;
+    border: 6px solid #262626;
 }
