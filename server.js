@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
     res.render("index.html");
 });
 
+app.get("/messages", (req, res) => {
+    res.json(messages)
+})
+
 let messages = [];
 
 io.on("connection", (socket) => {
