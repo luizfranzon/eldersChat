@@ -25,7 +25,7 @@
         var socket = io('http://localhost:3080');
 
         function renderMessage(message) {
-            $('.messages').append(`<div class="message"><strong>${message.author}:</strong> ${message.message}</div>`)
+            $('.messages').append(`<div class="message"><strong>${message.author}:</strong> <p class="messageText">${message.message}</p> </div><br>`)
         }
 
         socket.on("previousMessages", function(messages) {
@@ -44,7 +44,7 @@
             var author = $('input[name=username]').val()
             var message = $('.messageInput')
 
-            if (author.length && message.length) {
+            if (author.length && message.val().length && message.val().length < 200) {
                 var messageObject = {
                     author: author,
                     message: message.val(),
